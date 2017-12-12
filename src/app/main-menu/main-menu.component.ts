@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+import { UsuarioService } from "../servicios/usuario.service";
 
 @Component({
   selector: 'app-main-menu',
@@ -7,11 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private miUserServ:UsuarioService, private ruta:Router) { }
 
   desloguear()
   {
-    
+    try{
+      localStorage.removeItem("token");
+      this.ruta.navigateByUrl('/');
+    }
+    catch (error){
+      console.log(error);
+      return false;
+    }
+
+
+
   }
 
   ngOnInit() { }

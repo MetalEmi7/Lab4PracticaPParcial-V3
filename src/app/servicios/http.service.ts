@@ -9,7 +9,7 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class HttpService {
-  url:string = "http://localhost/api2Parcial/apirest/usuarios/";
+  url:string = "http://localhost/api2Parcial/apirest/user/";
 
   constructor(public http:Http) { }
 

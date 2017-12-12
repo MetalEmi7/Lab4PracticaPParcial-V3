@@ -11,8 +11,7 @@ export class LoginComponent implements OnInit {
 
   form={
   email:"",
-  password:"",
-  
+  password:""  
   }
   constructor(private rout:Router, private datos:UsuarioService, private Http:HttpService) { }
 
@@ -21,12 +20,9 @@ export class LoginComponent implements OnInit {
     this.Http.realLogin(this.form)
     .then(data=>{
       
-        if (data.jwt != null) {
-          console.log("Estoy en Login "+ data);
-        
-          this.rout.navigate(["/menu"]);
-          console.log(data);
-        
+        if (data.jwt != null) {        
+          this.rout.navigate(["/menu"]);   
+          localStorage.setItem("token", data.jwt);     
         }
         else
         {

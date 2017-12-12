@@ -13,7 +13,10 @@ export class AltaComponent{
     password:"",
     email:"",
     sexo:"",
-    foto:"Default.jpg"
+    rol: "user V3",
+    foto:"Default.jpg",
+    photo:"Default.jpg",
+    jwt: localStorage.getItem("token")
   }
   
   constructor(private datos:UsuarioService ) { }
