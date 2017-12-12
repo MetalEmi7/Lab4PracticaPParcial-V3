@@ -9,13 +9,12 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class HttpService {
+  url:string = "http://localhost/api2Parcial/apirest/usuarios/";
+
   constructor(public http:Http) { }
 
   public realSelect()  {
-    let url = "http://localhost/slim/apirest/usuarios/";
-
-    return this.http
-    .get(url)
+    return this.http.get(this.url)
     .toPromise()
     .then(this.extraerDatos)
     .catch(this.handlerError)
@@ -24,10 +23,7 @@ export class HttpService {
 
   
   public realSelectUsuario(usuario)  {
-    let url = "http://localhost/slim/apirest/usuarios/" + usuario.id;
-
-    return this.http
-    .get(url)
+    return this.http.get(this.url + usuario.id)
     .toPromise()
     .then(this.extraerDatos)
     .catch(this.handlerError)
@@ -35,11 +31,7 @@ export class HttpService {
 
 
   public realInsert(datos)  {
-    console.log(datos);
-    let url = "http://localhost/slim/apirest/usuarios/insert";
-
-    return this.http
-    .post(url, datos)
+    return this.http.post(this.url + "insert", datos)
     .toPromise()
     .then(this.extraerDatos)
     .catch(this.handlerError)
@@ -48,21 +40,15 @@ export class HttpService {
 
 
   public realDelete(datos)  {
-    let url = "http://localhost/slim/apirest/usuarios/delete";
-
-    return this.http
-    .post(url, datos)
+    return this.http.post(this.url + "delete", datos)
     .toPromise()
     .then(this.extraerDatos)
     .catch(this.handlerError)
   }
 
-
+  //recibe un unico atributo 'id' de persona.
   public realDeleteUsuario(dato_id)  {
-    let url = "http://localhost/slim/apirest/usuarios/delete/" + dato_id;
-
-    return this.http
-    .post(url, dato_id)
+    return this.http.post(this.url + "delete", dato_id)
     .toPromise()
     .then(this.extraerDatos)
     .catch(this.handlerError)
@@ -71,10 +57,7 @@ export class HttpService {
 
 
   public realSubirFoto(foto)  {
-    let url = "http://localhost/slim/apirest/usuarios/subirFoto";            //-
-
-    return this.http
-    .post(url, foto)
+    return this.http.post(this.url + "subirFoto", foto)
     .toPromise()
     .then(this.extraerDatos)
     .catch(this.handlerError)
@@ -83,10 +66,8 @@ export class HttpService {
 
 
 
-  public realLogin(datos)  {
-    let url = "http://localhost/slim/apirest/login/signin";
-    
-    return this.http.post(url, datos)
+  public realLogin(datos)  {    
+    return this.http.post("http://localhost/api2Parcial/apirest/login/signin", datos)
     .toPromise()
     .then(this.extraerDatos)
     .catch(this.handlerError)

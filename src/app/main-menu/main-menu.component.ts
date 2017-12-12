@@ -9,6 +9,11 @@ export class MainMenuComponent implements OnInit {
 
   constructor() { }
 
+  desloguear()
+  {
+    
+  }
+
   ngOnInit() { }
 
 }
