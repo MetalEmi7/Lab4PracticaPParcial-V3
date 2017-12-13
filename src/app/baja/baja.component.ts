@@ -9,15 +9,12 @@ import { UsuarioService } from "../servicios/usuario.service";
 export class BajaComponent implements OnInit {
   mostrar_btn_submit:boolean=false;
 
-  Ruta:string="http://localhost/slim/apirest/imagenes/";
-
   form={
     id:"",
-    nomUsuario:"",
     password:"",
     email:"",
-    sexo:"",
-    foto:"Default.jpg",
+    rol:"",
+    photo:"Default.jpg",
   }
 
   constructor(private datos:UsuarioService)

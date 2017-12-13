@@ -1,9 +1,10 @@
-<div class="container">
-  <form class = "alert alert-primary" enctype="multipart/form-data">
+<div class="container was-validated">
+  <form class = "alert bg-dark text-white" novalidate enctype="multipart/form-data">
   
+
   <div class="form-group">
-      <label><b>NomUsuario de cuenta</b></label>
-      <input type="text" class="form-control" placeholder="Enter Username" name="user" [(ngModel)]="form.nomUsuario" >
+    <label><b>E-Mail</b></label>
+    <input type="email" class="form-control" placeholder="Enter email" name="email" id="maili" [(ngModel)]="form.email" >
   </div>
   
 
@@ -12,24 +13,13 @@
       <input type="password" class="form-control" placeholder="Enter Password" name="pass" [(ngModel)]="form.password" >
   </div>
 
-
   <div class="form-group">
-    <label><b>E-Email</b></label>
-    <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]="form.email" >
-  </div>
-
-
-  <div class="form-group">
-      <input type="radio" name="sexo" [(ngModel)]="form.sexo" value="Masculino">Masculino
-      <input type="radio" name="sexo" [(ngModel)]="form.sexo" value="Femenino">Femenino
-  </div>
-
-
-  <div class="form-group">
-    <label><b>Foto de avatar</b></label>
-    <input type="File" class="form-control" placeholder="Click para subir una imagen" id="foto" name="foto" (change)=tomarFoto($event)>
-  </div>
-  
+      <select class="custom-select d-block my-3" name="rol"  [(ngModel)]="form.rol">
+          <option value="">Seleccione rol de usuario</option>
+          <option value="user">Usuario comun</option>
+          <option value="admin">Admin</option>
+        </select>
+  </div>  
 
   <div align="center">
     <button align="center" class="btn btn-primary" type="submit" (click)="alta()">Guardar</button>

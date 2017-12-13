@@ -32,14 +32,14 @@ CREATE TABLE IF NOT EXISTS `personas` (
   `password` varchar(20) NOT NULL,
   `mail` varchar(30) NOT NULL,
   `sexo` varchar(15) NOT NULL,
-  `foto` varchar(100) NOT NULL
+  `photo` varchar(100) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `personas`
 --
 
-INSERT INTO `personas` (`id`, `nombre`, `password`, `mail`, `sexo`, `foto`) VALUES
+INSERT INTO `personas` (`id`, `nombre`, `password`, `mail`, `sexo`, `photo`) VALUES
 (81, 'Admin', '1aaxKRwFlYIGM', 'Admin', 'Masculino', ''),
 (82, 'Emiliano', '1aaxKRwFlYIGM', 'iron_emi7@hotmail.com', 'Masculino', '20161224_204044.jpg'),
 (83, 'Nico', '1aaxKRwFlYIGM', 'Nico@hotmail.com', 'Masculino', '20161224_204044.jpg'),

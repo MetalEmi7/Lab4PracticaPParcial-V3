@@ -21,10 +21,9 @@ export class MainMenuComponent implements OnInit {
       console.log(error);
       return false;
     }
-
-
-
   }
+
+
 
   ngOnInit() { }
 

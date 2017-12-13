@@ -54,8 +54,8 @@ export class UsuarioService {
 
 
 
-  public subirFoto(foto)  {           //-
-    return this.miHttp.realSubirFoto(foto)
+  public subirPhoto(photo)  {           //-
+    return this.miHttp.realSubirPhoto(photo)
     .then(data=>data)
     .catch(error=>error)
   }  
@@ -67,6 +67,13 @@ export class UsuarioService {
     .then(data=>data)
     .catch(error=>error)
   }
+
+
+
+
+
+
+
 
 
   

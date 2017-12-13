@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { UsuarioService } from "../servicios/usuario.service";
 import { HttpService } from "../servicios/http.service";
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
 
   Loguearse()
   {
+    //alert();
     this.Http.realLogin(this.form)
     .then(data=>{
       
@@ -35,8 +37,23 @@ export class LoginComponent implements OnInit {
     .catch(error=>{
       console.log(error);
     })
-    
   }
+
+
+  datosAdmin()
+  {
+    this.form.email = "admin@admin.com";
+    this.form.password = "1234";
+  }
+
+
+
+
+
+
+
+
+
 
   ngOnInit() {
   }

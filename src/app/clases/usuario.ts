@@ -1,9 +1,10 @@
 export class usuario
 {
     public id:number;
-    public nomUsuario:string;//    public nomUsuario:string;
+
     public password:string;
     public email:string;
-    public sexo:string;    
+    public rol:string;    
+    public photo:string;    
 
 }

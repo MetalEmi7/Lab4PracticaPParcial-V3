@@ -19,14 +19,13 @@ export class ListaComponent implements OnInit {
   ListaDeUsuarios:Array<any>;
 
   form={
-    id:"",
-    nomUsuario:"",
     password:"",
     email:"",
-    sexo:"",
-    foto:"Default.jpg",
+    rol:"",   
+    photo:"Default.jpg",
+        
+    jwt: localStorage.getItem("token")
   }
-
   constructor(private datos:UsuarioService, private http:HttpService)
   {
     this.ListaDeUsuarios = new Array<any>();
@@ -63,9 +62,9 @@ export class ListaComponent implements OnInit {
 
 
 
-    tomarFoto(archivo)
+    tomarPhoto(archivo)
     {
-      this.form.foto = archivo.target.files[0].name;
+      this.form.photo = archivo.target.files[0].name;
     }
 
 

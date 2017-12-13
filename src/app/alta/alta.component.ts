@@ -9,12 +9,9 @@ import { UsuarioService } from "../servicios/usuario.service";
 export class AltaComponent{
 
   form={
-    nomUsuario:"",
     password:"",
     email:"",
-    sexo:"",
-    rol: "user V3",
-    foto:"Default.jpg",
+    rol:"",
     photo:"Default.jpg",
     jwt: localStorage.getItem("token")
   }
@@ -38,11 +35,11 @@ export class AltaComponent{
 
 
 
-  tomarFoto(archivo)
+  tomarPhoto(archivo)
   {
-    this.form.foto = archivo.target.files[0].name;
+    this.form.photo = archivo.target.files[0].name;
 
-    this.datos.subirFoto(archivo.target)
+    this.datos.subirPhoto(archivo.target)
     .then(data=>{      
 
         console.log(archivo.target.files[0].name);

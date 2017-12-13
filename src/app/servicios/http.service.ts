@@ -31,7 +31,7 @@ export class HttpService {
 
 
   public realInsert(datos)  {
-    return this.http.post(this.url + "insert", datos)
+    return this.http.post(this.url + "add", datos)
     .toPromise()
     .then(this.extraerDatos)
     .catch(this.handlerError)
@@ -56,8 +56,8 @@ export class HttpService {
 
 
 
-  public realSubirFoto(foto)  {
-    return this.http.post(this.url + "subirFoto", foto)
+  public realSubirPhoto(photo)  {
+    return this.http.post(this.url + "subirPhoto", photo)
     .toPromise()
     .then(this.extraerDatos)
     .catch(this.handlerError)
@@ -72,6 +72,8 @@ export class HttpService {
     .then(this.extraerDatos)
     .catch(this.handlerError)
   }
+
+
 
 
 
