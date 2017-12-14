@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms"; //Necesario para doble bindeo
 import { RouterModule, Routes, RouterLinkActive } from "@angular/router";
 import { HttpModule } from "@angular/http";     //HTTP
+
 //modulos V3
 import { JwtModule } from './modulos/jwt/jwt.module';
 import { RoutingModule } from './modulos/routing/routing.module';
+import { NgPipesModule } from "ngx-pipes";
 
 
 import { AppComponent } from './app.component';
@@ -31,7 +33,8 @@ En esta version del proyecto se hace uso del ruteo en otro modulo 'RoutingModule
     RouterModule,
     RoutingModule,        
     HttpModule,   
-    JwtModule                         
+    JwtModule,
+    NgPipesModule                         
   ],
   providers: [
     UsuarioService,
