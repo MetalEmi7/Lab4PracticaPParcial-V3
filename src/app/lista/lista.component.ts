@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { UsuarioService } from "../servicios/usuario.service";
-import { Pipe } from "@angular/core";
 
 import { usuario } from "../clases/usuario";
 import { HttpService } from '../servicios/http.service';
