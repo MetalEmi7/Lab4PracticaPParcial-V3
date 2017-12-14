@@ -15,6 +15,7 @@ export class BajaComponent implements OnInit {
     email:"",
     rol:"",
     photo:"Default.jpg",
+    jwt: "",
   }
 
   constructor(private datos:UsuarioService)
@@ -25,6 +26,8 @@ export class BajaComponent implements OnInit {
   baja()
   {
     console.log("Metodo baja() - ");
+    console.log(this.form);
+
     this.datos.delete(this.form)
     .then(data=>{
       
@@ -40,11 +43,9 @@ export class BajaComponent implements OnInit {
   buscar()
   {
     console.log("Metodo buscar() - ");
+    console.log(this.form);
     this.datos.selectUsuario(this.form)
     .then(data=>{
-
-      console.log(this.form);
-      console.log(data);
 
       if(data["status"] == 404)
       {
@@ -53,7 +54,8 @@ export class BajaComponent implements OnInit {
       else
       {
         this.mostrar_btn_submit = true;
-        this.form = data;      
+        this.form = data;    
+        this.form.jwt = localStorage.getItem("token");  
         console.log(data);
       }
       

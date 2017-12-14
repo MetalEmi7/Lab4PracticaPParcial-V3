@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { UsuarioService } from "../servicios/usuario.service";
 
 @Component({
@@ -7,7 +7,9 @@ import { UsuarioService } from "../servicios/usuario.service";
   styleUrls: ['./alta.component.css']
 })
 export class AltaComponent{
-
+  @Output()
+  stdEvent:EventEmitter<any>;
+ 
   form={
     password:"",
     email:"",
@@ -16,7 +18,10 @@ export class AltaComponent{
     jwt: localStorage.getItem("token")
   }
   
-  constructor(private datos:UsuarioService ) { }
+  constructor(private datos:UsuarioService )
+  {
+    this.stdEvent = new EventEmitter<any>();
+  }
   CboxEditar:boolean=false;
 
   alta()
@@ -27,6 +32,7 @@ export class AltaComponent{
       
       //console.log(data);
       console.log(data);
+      this.stdEvent.emit();
       
     })
     .catch(error=> console.log(error))

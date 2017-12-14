@@ -48,13 +48,20 @@ export class HttpService {
 
   //recibe un unico atributo 'id' de persona.
   public realDeleteUsuario(dato_id)  {
-    return this.http.post(this.url + "delete", dato_id)
+    return this.http.post(this.url + "delete/" + dato_id, dato_id)
     .toPromise()
     .then(this.extraerDatos)
     .catch(this.handlerError)
   }
 
-
+/*
+  public realDeleteUsuarioConJWT(IdConJWT)  {
+    return this.http.post(this.url + "deleteWithJwt/" + IdConJWT.id, IdConJWT)
+    .toPromise()
+    .then(this.extraerDatos)
+    .catch(this.handlerError)
+  }
+*/
 
   public realSubirPhoto(photo)  {
     return this.http.post(this.url + "subirPhoto", photo)

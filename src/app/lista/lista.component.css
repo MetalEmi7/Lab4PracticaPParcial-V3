@@ -1,11 +1,12 @@
-.Masculino
+.Admin
 {
-    background-color: lightskyblue;
+    background-color: rgb(118, 101, 194);
 }
-.Femenino
+.User
 {
-    background-color: pink;
+    background-color: rgb(96, 255, 131);
 }
+
 .mini
 {
     height: 50px;

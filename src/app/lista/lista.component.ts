@@ -22,15 +22,43 @@ export class ListaComponent implements OnInit {
     password:"",
     email:"",
     rol:"",   
-    photo:"Default.jpg",
-        
+    photo:"Default.jpg",        
     jwt: localStorage.getItem("token")
   }
+  
   constructor(private datos:UsuarioService, private http:HttpService)
   {
     this.ListaDeUsuarios = new Array<any>();
     this.listar();
   }
+
+
+
+
+
+
+
+  listar()
+  {
+    this.datos.select()
+    .then(data=>{
+
+      this.ListaDeUsuarios = data;
+      console.log (this.ListaDeUsuarios);   
+
+    })
+    .catch(error=> console.log(error))
+  }
+
+
+
+
+
+
+
+
+
+
 
     baja(usuario)
     {
@@ -74,25 +102,15 @@ export class ListaComponent implements OnInit {
     {
       this.datos.selectUsuario(usuario)
       .then(data=>{  
+
         console.log(data);
         this.UsuarioParaMostrar = data;
+        
       })
       .catch(error=> console.log(error))
     }
 
 
-
-    listar()
-    {
-      this.datos.select()
-      .then(data=>{
-
-        this.ListaDeUsuarios = data;
-        console.log (this.ListaDeUsuarios);   
-
-      })
-      .catch(error=> console.log(error))
-    }
 
 
 

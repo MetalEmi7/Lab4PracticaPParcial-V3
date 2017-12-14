@@ -9,13 +9,13 @@
         </tr>
       </thead>   
       
-      <tr *ngFor="let per of ListaDeUsuarios" [ngClass]="per.rol" (click)="onClickRow(per)" >
-        <td>{{per.email}}</td>
-        <td>{{per.rol}}</td>
-        <th><img src="http://localhost/slim/apirest/imagenes/{{per.photo}}" width="40" height="40"></th>
+      <tr *ngFor="let user of ListaDeUsuarios" [ngClass]="user.rol" (click)="onClickRow(user)" >
+        <td>{{user.email}}</td>
+        <td>{{user.rol}}</td>
+        <th><img src="http://localhost/slim/apirest/imagenes/{{user.photo}}" width="40" height="40"></th>
 
         <td>          
-        <app-borrar-usuario (stdEvent)="listar()" [idParaBorrar] = "per.id"></app-borrar-usuario>           
+          <app-borrar-usuario (stdEvent)="listar()" [idParaBorrar] = "user.id"></app-borrar-usuario>           
         </td>
 
       </tr>
@@ -34,7 +34,7 @@
 
 
 
-<div class="container" *ngIf="CboxEditar">
-<app-alta></app-alta>
-<div>
+        <div class="container" *ngIf="CboxEditar">
+          <app-alta (stdEvent)="listar()"></app-alta>
+        <div>
 

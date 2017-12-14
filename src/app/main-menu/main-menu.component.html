@@ -1,8 +1,8 @@
 <body align="right">
   <div class="alert bg-dark">
-  <button class="btn btn-primary" type="button" routerLink="/menu/alta" >Alta</button>  
+  <button *ngIf="token.data.rol == 'Admin'" class="btn btn-success" type="button" routerLink="/menu/alta" >Alta</button>  
   <button class="btn btn-primary" type="button" routerLink="/menu/listado" >Listado</button>
-  <button class="btn btn-danger" type="button" routerLink="/menu/baja" >Baja</button>  
+  <button *ngIf="token.data.rol == 'Admin'" class="btn btn-success" type="button" routerLink="/menu/baja" >Baja</button>  
 
   <button class="btn btn-secundary" type="button" (click)="desloguear()">Log Out</button>
 

@@ -37,7 +37,7 @@ export class UsuarioService {
   }
 
 
-
+  //Eliminacion sin permisos ni controles.
   public delete(datos)  {
     return this.miHttp.realDelete(datos)
     .then(data=>data)
@@ -45,12 +45,22 @@ export class UsuarioService {
   }
 
 
-
+  //Verificacion de usuario desde el Frontend
   public deleteUsuario(dato_id)  {
     return this.miHttp.realDeleteUsuario(dato_id)
     .then(data=>data)
     .catch(error=>error)
   }
+
+
+/*
+  //Verificacion de usuario desde el Backend
+  public deleteUsuarioConJWT(datos)  {
+    return this.miHttp.realDeleteUsuarioConJWT(datos)
+    .then(data=>data)
+    .catch(error=>error)
+  }
+*/
 
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { UsuarioService } from "../servicios/usuario.service";
+import { AuthService } from "../servicios/auth/auth.service";
 
 @Component({
   selector: 'app-main-menu',
@@ -9,7 +10,9 @@ import { UsuarioService } from "../servicios/usuario.service";
 })
 export class MainMenuComponent implements OnInit {
 
-  constructor(private miUserServ:UsuarioService, private ruta:Router) { }
+  token = this.miAuth.getToken();  
+
+  constructor(private miUserServ:UsuarioService, private ruta:Router, private miAuth:AuthService) { }
 
   desloguear()
   {

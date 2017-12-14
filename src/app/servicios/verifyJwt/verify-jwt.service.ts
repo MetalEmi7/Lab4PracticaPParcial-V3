@@ -6,7 +6,9 @@ import { AuthService } from '../../servicios/auth/auth.service';
 export class VerifyJwtService implements CanActivate {
 
 
-  constructor(private router: Router, private auth: AuthService, ) { }
+  constructor(private router: Router, private auth: AuthService, )
+  { }
+
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Promise<boolean> {
 

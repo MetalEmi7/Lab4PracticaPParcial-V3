@@ -1,2 +1,2 @@
-
-<button align="center" type="submit"   class="btn btn-danger"  (click)="BorrarUsuario(idParaBorrar)">Borrar</button>
+<button *ngIf="token.data.rol == 'Admin'" align="center" type="submit"   class="btn btn-danger"  (click)="BorrarUsuario(idParaBorrar)">Eliminar</button>
+<span *ngIf="token.data.rol != 'Admin'" align="center">Sin acciones</span>
